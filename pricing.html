@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — Plans for Senior Living Facilities | Better5</title>
+  <meta name="description" content="Better5 pricing starts at $158/month. Unlimited resident access, all 5 pillars, staff guide. Minimum term applies. See all plans.">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Helvetica Neue',Arial,sans-serif;background:#fff;color:#1a1a1a;line-height:1.6;}
+    a{text-decoration:none;}
+    nav{background:#1b3a5c;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.2);}
+    .nav-logo{color:#fff;font-size:22px;font-weight:800;letter-spacing:-0.5px;white-space:nowrap;}
+    .nav-logo span{color:#4cb8a0;}
+    .nav-logo small{display:block;font-size:10px;font-weight:400;color:#7a9db5;letter-spacing:1px;text-transform:uppercase;margin-top:-2px;}
+    .nav-links{display:flex;align-items:center;gap:28px;}
+    .nav-links a{color:#c0d8e8;font-size:14px;font-weight:500;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:#fff;}
+    .nav-cta{background:#4cb8a0;color:#fff!important;font-size:13px;font-weight:700;padding:10px 22px;border-radius:50px;white-space:nowrap;}
+    .nav-cta:hover{background:#3da88e!important;}
+    
+    /* Hamburger Menu */
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;margin:0 -8px 0 0;}
+    .hamburger span{width:24px;height:2.5px;background:#fff;border-radius:2px;transition:all 0.3s ease;}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px);}
+    .hamburger.active span:nth-child(2){opacity:0;}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px);}
+    
+    .nav-mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:#1b3a5c;padding:24px 20px;overflow-y:auto;flex-direction:column;gap:0;z-index:999;animation:slideDown 0.3s ease;}
+    .nav-mobile-menu.active{display:flex;}
+    @keyframes slideDown{from{transform:translateY(-10px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+    .nav-mobile-menu a{color:#c0d8e8;font-size:16px;font-weight:500;padding:16px 16px;border-bottom:1px solid rgba(255,255,255,0.1);transition:color 0.2s;}
+    .nav-mobile-menu a:hover,.nav-mobile-menu a.active{color:#fff;background:rgba(76,184,160,0.1);}
+    .nav-mobile-menu .nav-cta{width:100%;text-align:center;border-bottom:none;padding:14px 16px;margin-top:8px;background:#4cb8a0;}
+    
+    @media(max-width:768px){
+      nav{padding:0 12px;}
+      .nav-links{display:none;}
+      .hamburger{display:flex;}
+    }
+    .hero{background:linear-gradient(135deg,#1b3a5c 0%,#0d2440 100%);color:#fff;padding:80px 40px 88px;text-align:center;}
+    .hero-badge{display:inline-block;background:rgba(76,184,160,0.18);border:1px solid rgba(76,184,160,0.5);color:#4cb8a0;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:28px;}
+    .hero h1{font-size:clamp(28px,4.5vw,50px);font-weight:800;line-height:1.15;max-width:700px;margin:0 auto 20px;}
+    .hero-sub{font-size:18px;color:#a0bdd0;max-width:560px;margin:0 auto;line-height:1.7;}
+    .trust-strip{background:#f0f7f5;border-top:3px solid #4cb8a0;padding:20px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+    .ts-item{font-size:14px;color:#1b3a5c;font-weight:600;display:flex;align-items:center;justify-content:center;gap:8px;}
+    .ts-item svg{flex-shrink:0;}
+    .pricing-section{padding:80px 40px;}
+    .pricing-inner{max-width:1100px;margin:0 auto;}
+    /* TOGGLE */
+    .billing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin:32px 0 0;flex-wrap:wrap;min-height:52px;}
+    .toggle-label{font-size:14px;font-weight:600;color:#888;cursor:pointer;transition:color 0.2s;}
+    .toggle-label.active{color:#1b3a5c;}
+    .toggle-switch{position:relative;width:52px;height:28px;cursor:pointer;flex-shrink:0;}
+    .toggle-switch input{opacity:0;width:0;height:0;position:absolute;}
+    .toggle-track{position:absolute;inset:0;background:#4cb8a0;border-radius:50px;transition:background 0.2s;}
+    .toggle-thumb{position:absolute;top:4px;left:4px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform 0.2s;box-shadow:0 1px 4px rgba(0,0,0,0.2);}
+    input:not(:checked) ~ .toggle-track{background:#ccc;}
+    input:not(:checked) ~ .toggle-thumb{transform:translateX(0);}
+    input:checked ~ .toggle-thumb{transform:translateX(24px);}
+    .save-badge{background:#e8f5f1;color:#2a8a72;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px;}
+    .annual-note{font-size:13px;color:#aaa;margin-bottom:28px;}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:32px;align-items:start;}
+    .card{background:#fff;border:2px solid #e8eff5;border-radius:24px;padding:40px 32px;position:relative;transition:box-shadow 0.2s;}
+    .card:hover{box-shadow:0 8px 32px rgba(0,0,0,0.08);}
+    .card.featured{border-color:#4cb8a0;box-shadow:0 4px 32px rgba(76,184,160,0.2);}
+    .card.custom{background:#f9fbfd;}
+    .featured-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#4cb8a0;color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 18px;border-radius:50px;white-space:nowrap;}
+    .card-tier{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#4cb8a0;margin-bottom:8px;}
+    .card h2{font-size:26px;font-weight:800;color:#1b3a5c;margin-bottom:4px;}
+    .card-desc{font-size:14px;color:#888;margin-bottom:20px;line-height:1.5;}
+    .card-price{margin:20px 0 8px;}
+    .price-main{font-size:48px;font-weight:800;color:#1b3a5c;line-height:1;}
+    .price-per{font-size:16px;color:#888;font-weight:400;}
+    .price-note{font-size:13px;color:#aaa;margin-bottom:28px;}
+    .custom-price-label{font-size:22px;font-weight:700;color:#1b3a5c;margin:20px 0 8px;display:block;}
+    .custom-sub{font-size:14px;color:#888;margin-bottom:28px;line-height:1.5;}
+    .card-features{list-style:none;margin-bottom:32px;border-top:1px solid #f0f5f8;padding-top:20px;}
+    .card-features li{font-size:14px;color:#555;padding:9px 0;border-bottom:1px solid #f0f5f8;display:flex;align-items:center;gap:10px;line-height:1.45;text-align:left;}
+    .card-features li .check{flex-shrink:0;}
+    .card-features li .inherited{color:#aaa;}
+    .card-features li em{color:#777;font-size:13px;}
+    .card-cta{display:block;text-align:center;font-size:15px;font-weight:700;padding:15px;border-radius:50px;transition:all 0.2s;}
+    .card-cta-outline{background:transparent;color:#1b3a5c;border:2px solid #1b3a5c;}
+    .card-cta-outline:hover{background:#1b3a5c;color:#fff;}
+    .card-cta-solid{background:#4cb8a0;color:#fff;border:2px solid #4cb8a0;}
+    .card-cta-solid:hover{background:#3da88e;border-color:#3da88e;}
+    .card-cta-ghost{background:transparent;color:#4cb8a0;border:2px solid #4cb8a0;}
+    .card-cta-ghost:hover{background:#4cb8a0;color:#fff;}
+    .card-trial{font-size:12px;color:#aaa;text-align:center;margin-top:12px;}
+    .all-plans{background:#f0f7f5;border-radius:16px;padding:32px 40px;margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;align-items:center;}
+    .all-plans h3{font-size:16px;font-weight:700;color:#1b3a5c;margin-bottom:4px;}
+    .all-plans-list{display:flex;gap:24px;flex-wrap:wrap;flex:1;}
+    .ap-item{display:flex;align-items:center;gap:8px;font-size:14px;color:#444;}
+    .ap-check{color:#4cb8a0;font-weight:700;display:flex;align-items:center;}
+    .pricing-faq{max-width:720px;margin:72px auto 0;padding:0 40px;}
+    .faq-title{font-size:24px;font-weight:800;color:#1b3a5c;margin-bottom:32px;text-align:center;}
+    .faq-item{border-bottom:1px solid #e8eff5;padding:24px 0;}
+    .faq-item h3{font-size:16px;font-weight:700;color:#1b3a5c;margin-bottom:8px;}
+    .faq-item p{font-size:15px;color:#555;line-height:1.7;}
+    .multi-fac{background:#1b3a5c;color:#fff;border-radius:20px;padding:48px;max-width:760px;margin:64px auto 0;text-align:center;}
+    .multi-fac h3{font-size:22px;font-weight:800;margin-bottom:12px;}
+    .multi-fac p{font-size:16px;color:#a0bdd0;line-height:1.7;margin-bottom:28px;}
+    .btn-teal{background:#4cb8a0;color:#fff;font-size:15px;font-weight:700;padding:14px 32px;border-radius:50px;display:inline-block;transition:background 0.2s;}
+    .btn-teal:hover{background:#3da88e;}
+    footer{background:#0d2440;padding:32px 40px;margin-top:80px;text-align:center;font-size:13px;color:#3a5a70;}
+    footer a{color:#4cb8a0;}
+    @media(max-width:768px){
+      nav{padding:0 12px;}
+      .pricing-section{padding:48px 20px;}
+      .hero{padding:48px 20px 56px;}
+      .hero h1{font-size:22px;}
+      .hero-sub{font-size:15px;}
+      .trust-strip{padding:16px 14px;gap:12px 14px;grid-template-columns:1fr 1fr;}
+      .ts-item{font-size:13px;justify-content:flex-start;}
+      
+      .pricing-inner h2{font-size:20px;}
+      .cards{grid-template-columns:1fr;}
+      .card{padding:28px 20px;}
+      .pricing-faq{padding:0 20px;}
+      .all-plans{padding:24px 20px;}
+      .multi-fac{padding:28px 20px;margin:40px 20px 0;}
+      
+      .pricing-table{font-size:13px;}
+      .feature-name{font-size:14px;}
+      footer{padding:24px 18px;font-size:12px;}
+      img{max-width:100%;height:auto;display:block;}
+    }
+    @media(max-width:600px){
+      .hero{text-align:center;}
+      .section-label{text-align:center;}
+      .section-title{text-align:center;}
+      .section-sub{text-align:center;}      body{padding-bottom:80px;}
+      .trust-strip{grid-template-columns:1fr 1fr;}
+      .hero h1{font-size:20px;}
+      .pricing-section{padding:56px 20px;}
+      .hero{padding:60px 20px 72px;}
+      .all-plans{padding:24px 20px;}
+      .multi-fac{padding:32px 20px;margin:48px 20px 0;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Better<span>5</span><small>for Senior Living</small></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="program.html">Program</a>
+    <a href="research.html">Research</a>
+    <a href="pricing.html" class="active">Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="nav-cta" onclick="posthog.capture('demo_cta_clicked',{location:'nav'})">Book a Free Demo</a>
+  </div>
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="program.html" onclick="closeMobileMenu()">Program</a>
+  <a href="research.html" onclick="closeMobileMenu()">Research</a>
+  <a href="pricing.html" onclick="closeMobileMenu()" class="active">Pricing</a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+  <a href="contact.html" class="nav-cta" onclick="closeMobileMenu(); posthog.capture('demo_cta_clicked',{location:'mobile_nav'})">Book a Free Demo</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">Pricing</div>
+  <h1>Simple pricing.<br>No surprises.</h1>
+  <p class="hero-sub">One flat monthly fee. Unlimited residents. Straightforward plans built for senior living.</p>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="ts-item">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#4cb8a0"/><path d="M4.5 8L7 10.5L11.5 5.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Unlimited residents
+  </div>
+  <div class="ts-item">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#4cb8a0"/><path d="M4.5 8L7 10.5L11.5 5.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    All 5 pillars included
+  </div>
+  <div class="ts-item">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#4cb8a0"/><path d="M4.5 8L7 10.5L11.5 5.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    SFU research partnership
+  </div>
+  <div class="ts-item">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#4cb8a0"/><path d="M4.5 8L7 10.5L11.5 5.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Dedicated onboarding support
+  </div>
+</div>
+
+<!-- PRICING CARDS -->
+<div class="pricing-section">
+  <div class="pricing-inner">
+    <div style="text-align:center;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#4cb8a0;margin-bottom:12px;">Choose your plan</div>
+      <h2 style="font-size:clamp(24px,3vw,34px);font-weight:800;color:#1b3a5c;margin-bottom:8px;">Pick the right fit for your facility</h2>
+      <p style="font-size:17px;color:#666;">All plans include the full Better5 program. Upgrade anytime.</p>
+    </div>
+
+    <!-- BILLING TOGGLE -->
+    <div class="billing-toggle">
+      <span class="toggle-label" id="lbl-monthly">Monthly</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="billing-switch" checked onchange="switchBilling(this)">
+        <span class="toggle-track"></span>
+        <span class="toggle-thumb"></span>
+      </label>
+      <span class="toggle-label active" id="lbl-annual">Annual</span>
+      <span class="save-badge" id="save-badge">Save up to $593/yr</span>
+    </div>
+
+    <div class="cards">
+
+      <!-- ESSENTIAL -->
+      <div class="card">
+        <div class="card-tier">Essential</div>
+        <h2>Essential</h2>
+        <p class="card-desc">Everything you need to run a great resident fitness program — ready to go from day one.</p>
+        <div class="card-price">
+          <span class="price-main" id="price-essential">$1,295</span><span class="price-per" id="per-essential">/yr</span>
+        </div>
+        <p class="price-note" id="note-essential">Save $253 vs. monthly</p>
+        <ul class="card-features">
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Unlimited resident access</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Full weekly programming library</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> All 5 pillars covered (balance, strength, mobility, endurance, and mind)</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Staff facilitation guide (PDF + Video)</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Monthly participation report</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Email support</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Works on any device</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Onboarding call with our team</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Co-branded materials available</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Resident recruitment materials</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Dedicated account executive</li>
+        </ul>
+        <a href="contact.html" class="card-cta card-cta-outline" onclick="posthog.capture('demo_cta_clicked',{location:'pricing_essential'})">Get Started</a>
+        <p class="card-trial">or <a href="contact.html" style="color:#4cb8a0;" onclick="posthog.capture('demo_cta_clicked',{location:'pricing_essential_demo'})">book a demo first</a></p>
+      </div>
+
+      <!-- COMPLETE (FEATURED) -->
+      <div class="card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="card-tier">Complete</div>
+        <h2>Complete</h2>
+        <p class="card-desc">The full-service experience — everything in Essential, plus hands-on support to maximize resident buy-in from day one.</p>
+        <div class="card-price">
+          <span class="price-main" id="price-complete">$2,995</span><span class="price-per" id="per-complete">/yr</span>
+        </div>
+        <p class="price-note" id="note-complete">Save $593 vs. monthly</p>
+        <ul class="card-features">
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="inherited">Everything in Essential</span></li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Priority email &amp; phone support</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Re-onboarding on staff turnover <em>(up to 1x/month)</em></li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Direct virtual training with our instructors <em>(*On site available &mdash; conditions apply)</em></li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Open API to support family engagement reports</li>
+        </ul>
+        <a href="contact.html" class="card-cta card-cta-solid" onclick="posthog.capture('demo_cta_clicked',{location:'pricing_complete'})">Get Started</a>
+        <p class="card-trial">or <a href="contact.html" style="color:#4cb8a0;" onclick="posthog.capture('demo_cta_clicked',{location:'pricing_complete_demo'})">book a demo first</a></p>
+      </div>
+
+      <!-- CUSTOM CONTENT -->
+      <div class="card custom">
+        <div class="card-tier">Custom</div>
+        <h2>Custom Content</h2>
+        <p class="card-desc">Need something built specifically for your residents, brand, or care model? We create custom class content on request.</p>
+        <span class="custom-price-label">Pricing on request</span>
+        <p class="custom-sub">Every facility is different. Tell us what you're looking for and we'll put together a proposal tailored to your needs.</p>
+        <ul class="card-features">
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Custom-filmed class content</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Tailored to your resident population</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Co-branded or white-label options</li>
+          <li><span class="check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Specialty programs (dementia, post-rehab, and more)</li>
+        </ul>
+        <a href="contact.html" class="card-cta card-cta-ghost" onclick="posthog.capture('demo_cta_clicked',{location:'pricing_custom'})">Inquire About Custom Content</a>
+      </div>
+
+    </div>
+
+    <p style="font-size:13px;color:#aaa;margin-bottom:40px;">All prices in CAD, excluding GST. Minimum term applies.</p>
+
+    <!-- ALL PLANS INCLUDE -->
+    <div class="all-plans">
+      <h3 style="white-space:nowrap;">All plans include:</h3>
+      <div class="all-plans-list">
+        <div class="ap-item"><span class="ap-check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Unlimited residents</div>
+        <div class="ap-item"><span class="ap-check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Dedicated onboarding</div>
+        <div class="ap-item"><span class="ap-check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> SFU research partnership</div>
+        <div class="ap-item"><span class="ap-check"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Monthly participation reports</div>
+      </div>
+    </div>
+
+    <!-- MULTI-FACILITY -->
+    <div class="multi-fac">
+      <h3>Managing multiple facilities?</h3>
+      <p>We offer group pricing for multi-facility operators and senior living networks. Get in touch and we'll build a plan that works for your portfolio.</p>
+      <a href="contact.html" class="btn-teal" onclick="posthog.capture('demo_cta_clicked',{location:'pricing_multi_fac'})">Talk to us about group pricing &rarr;</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- PRICING FAQ -->
+<div class="pricing-faq">
+  <h2 class="faq-title">Quick answers</h2>
+
+  <div class="faq-item">
+    <h3>How many residents can use it?</h3>
+    <p>Unlimited. Every plan includes unlimited resident access. Whether you have 20 residents or 200, the monthly price stays the same.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Is there a setup fee?</h3>
+    <p>Yes, there is a one-time onboarding fee. This covers account setup, your initial staff training call, and getting your facility fully ready to run sessions. The amount varies depending on your plan — contact us for details.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Is there any installation required?</h3>
+    <p>None. Better5 works in a browser on any device &mdash; smart TV, tablet, laptop, or phone. There's nothing to install. We set up your account and you're running sessions the same week.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What happens if we have staff turnover?</h3>
+    <p>On the Complete plan, we re-onboard new staff at no extra charge &mdash; just let us know and we'll schedule a new onboarding call to get them up to speed quickly. Limitations apply: re-onboarding is available up to once per month.</p>
+  </div>
+  <div class="faq-item">
+    <h3>What are the contract terms?</h3>
+    <p>All plans include a minimum commitment term. We work with facilities to find terms that make sense for both sides &mdash; reach out and we'll walk you through the details.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Better5 &nbsp;&middot;&nbsp; <a href="contact.html">Contact</a> &nbsp;&middot;&nbsp; <a href="mailto:partners@better5.com">partners@better5.com</a> &nbsp;&middot;&nbsp; <a href="https://better5.com">better5.com</a></p>
+</footer>
+
+<!-- PostHog -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_ru5aBEst81batGjqgUh88EFHlYCxEikwHKEjdrkN0MW',{api_host:'https://us.i.posthog.com'});
+</script>
+
+<script>
+  function switchBilling(el) {
+    var annual = el.checked;
+    // Show monthly equivalent when annual is selected
+    if (annual) {
+      var essentialMonthly = Math.ceil(1295 / 12);
+      var completeMonthly = Math.ceil(2995 / 12);
+      document.getElementById('price-essential').textContent = '$' + essentialMonthly;
+      document.getElementById('per-essential').textContent   = '/mo';
+      document.getElementById('note-essential').textContent  = 'Billed annually at $1,295/yr';
+      document.getElementById('price-complete').textContent  = '$' + completeMonthly;
+      document.getElementById('per-complete').textContent    = '/mo';
+      document.getElementById('note-complete').textContent   = 'Billed annually at $2,995/yr';
+    } else {
+      document.getElementById('price-essential').textContent = '$129';
+      document.getElementById('per-essential').textContent   = '/mo';
+      document.getElementById('note-essential').textContent  = 'Billed monthly · Minimum term applies';
+      document.getElementById('price-complete').textContent  = '$299';
+      document.getElementById('per-complete').textContent    = '/mo';
+      document.getElementById('note-complete').textContent   = 'Billed monthly · Minimum term applies';
+    }
+    document.getElementById('lbl-annual').classList.toggle('active', annual);
+    document.getElementById('lbl-monthly').classList.toggle('active', !annual);
+    document.getElementById('save-badge').style.visibility = annual ? 'visible' : 'hidden';
+  }
+
+  // Initialize pricing display on page load (Annual by default)
+  window.addEventListener('DOMContentLoaded', function() {
+    var billingSwitch = document.getElementById('billing-switch');
+    if (billingSwitch) {
+      switchBilling(billingSwitch);
+    }
+  });
+
+  // Mobile Menu
+  function toggleMobileMenu(){const hamburger=document.querySelector('.hamburger');const menu=document.getElementById('mobileMenu');hamburger.classList.toggle('active');menu.classList.toggle('active');}function closeMobileMenu(){const hamburger=document.querySelector('.hamburger');const menu=document.getElementById('mobileMenu');hamburger.classList.remove('active');menu.classList.remove('active');}document.addEventListener('click',function(e){const nav=document.querySelector('nav');const menu=document.getElementById('mobileMenu');const hamburger=document.querySelector('.hamburger');if(!nav.contains(e.target)&&!menu.contains(e.target)){hamburger.classList.remove('active');menu.classList.remove('active');}});
+</script>
+</body>
+</html>
+<!-- Tue Mar 31 09:20:28 PDT 2026 -->

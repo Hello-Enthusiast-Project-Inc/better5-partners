@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Better5 Movement Method — Better5 for Senior Living Communities</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1b3a5c;
+      --teal: #4cb8a0;
+      --white: #ffffff;
+      --light-bg: #f0f7f5;
+      --light-bg2: #f8fafb;
+      --text-dark: #1a2a3a;
+      --text-mid: #3d5166;
+      --text-light: #6b8099;
+      --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--text-dark);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── DRAFT BANNER ── */
+    .draft-banner {
+      background: #fef3c7;
+      border-bottom: 2px solid #f59e0b;
+      text-align: center;
+      padding: 10px 16px;
+      font-family: var(--font);
+      font-size: 13px;
+      font-weight: 600;
+      color: #92400e;
+      position: relative;
+      z-index: 200;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(27,58,92,0.08);
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      text-decoration: none;
+    }
+    .logo-wordmark {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--navy);
+    }
+    .logo-wordmark span { color: var(--teal); }
+    .logo-sub {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-top: 3px;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 96px 48px;
+      position: relative;
+    }
+
+    .section-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(150deg, #0e2338 0%, #1b3a5c 45%, #1d4a6e 100%);
+      padding-top: 136px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-photo {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+      aspect-ratio: 3/4;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%;
+      display: block;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.85);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 36px;
+    }
+
+    .hero-badge svg { flex-shrink: 0; }
+
+    .hero h1 {
+      font-size: clamp(36px, 5.5vw, 68px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      max-width: 820px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span { color: var(--teal); }
+
+    .hero-subhead {
+      font-size: clamp(17px, 2vw, 22px);
+      color: rgba(255,255,255,0.72);
+      line-height: 1.55;
+      max-width: 580px;
+      font-weight: 400;
+    }
+
+    .hero-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--teal);
+      border-radius: 2px;
+      margin: 40px 0 0;
+    }
+
+    /* Who This Is For box in hero */
+    .hero-who {
+      margin-top: 40px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 24px 28px;
+      max-width: 520px;
+    }
+    .hero-who-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 14px;
+    }
+    .hero-who ul {
+      list-style: none;
+      padding: 0;
+    }
+    .hero-who ul li {
+      font-size: 15px;
+      color: rgba(255,255,255,0.88);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      line-height: 1.45;
+    }
+    .hero-who ul li:last-child { border-bottom: none; padding-bottom: 0; }
+    .hero-who ul li:first-child { padding-top: 0; }
+    .hero-who-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: rgba(76,184,160,0.2);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .hero-who-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .hero-who-text span {
+      font-size: 13px;
+      color: rgba(255,255,255,0.58);
+      line-height: 1.45;
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+
+    /* On dark backgrounds — use white with reduced opacity instead of teal */
+    .section-label-on-dark {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 16px;
+    }
+
+    /* ── HEADINGS ── */
+    h2 {
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 700;
+      line-height: 1.12;
+      letter-spacing: -0.8px;
+    }
+
+    h2.on-dark { color: var(--white); }
+
+    .section-subhead {
+      font-size: 18px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin-top: 14px;
+      max-width: 560px;
+    }
+
+    .section-subhead.on-dark { color: rgba(255,255,255,0.6); }
+
+    /* ── SLIDE 1: PROBLEM ── */
+    .slide-problem { background: var(--navy); }
+    .slide-problem h2 { color: var(--white); }
+
+    .problem-intro {
+      font-size: 20px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 14px;
+      margin-bottom: 56px;
+      max-width: 600px;
+      line-height: 1.55;
+    }
+
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    .problem-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 32px 28px;
+      border-top: 3px solid rgba(255,255,255,0.15);
+    }
+
+    .problem-card-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .problem-card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    .pullout {
+      text-align: center;
+      padding: 48px 40px;
+      margin-top: 48px;
+      position: relative;
+    }
+
+    .pullout::before {
+      content: '\201C';
+      font-size: 120px;
+      line-height: 0.6;
+      color: var(--teal);
+      opacity: 0.4;
+      display: block;
+      margin-bottom: 16px;
+      font-family: Georgia, serif;
+    }
+
+    .pullout p {
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700;
+      color: var(--white);
+      font-style: italic;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ── SLIDE 2: OUTCOMES ── */
+    .outcomes-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 52px;
+    }
+
+    .outcome-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 32px 28px;
+      border-top: 3px solid var(--teal);
+      box-shadow: 0 2px 16px rgba(27,58,92,0.07);
+    }
+
+    .outcome-card-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(76,184,160,0.12);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .outcome-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .outcome-card p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── SLIDE 3: SOLUTION ── */
+    .solution-points {
+      margin-top: 52px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .solution-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 28px;
+      border-radius: 12px;
+      background: var(--light-bg);
+    }
+
+    .solution-point-icon { flex-shrink: 0; margin-top: 2px; }
+
+    .solution-point-text h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .solution-point-text p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* Staff confidence callout */
+    .staff-confidence {
+      margin-top: 28px;
+      background: var(--navy);
+      border-left: 4px solid rgba(255,255,255,0.25);
+      border-radius: 0 10px 10px 0;
+      padding: 24px 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .staff-confidence-icon {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .staff-confidence strong {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+      font-style: normal;
+    }
+    .staff-confidence span {
+      font-size: 15px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* ── DIFFERENTIATION SLIDE ── */
+    .slide-diff { background: var(--navy); }
+    .slide-diff h2 { color: var(--white); }
+
+    .diff-tagline {
+      font-size: 18px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 10px;
+      margin-bottom: 52px;
+      font-style: italic;
+      max-width: 640px;
+      line-height: 1.6;
+    }
+
+    .diff-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .diff-col { padding: 36px 32px; }
+    .diff-col.others { background: rgba(255,255,255,0.04); }
+    .diff-col.b5 { background: rgba(255,255,255,0.10); border-left: 3px solid rgba(76,184,160,0.6); }
+
+    .diff-col-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .diff-col.others .diff-col-label { color: rgba(255,255,255,1); }
+    .diff-col.b5 .diff-col-label { color: rgba(255,255,255,0.5); }
+
+    .diff-col ul { list-style: none; padding: 0; }
+    .diff-col ul li {
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      font-size: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.4;
+    }
+    .diff-col ul li:last-child { border-bottom: none; }
+    .diff-col.others ul li { color: rgba(255,255,255,0.90); }
+    .diff-col.b5 ul li { color: rgba(255,255,255,0.90); font-weight: 500; }
+
+    .diff-col ul li .marker {
+      flex-shrink: 0;
+      font-size: 14px;
+      margin-top: 1px;
+      font-weight: 700;
+    }
+    .diff-col.others ul li .marker { color: rgba(255,255,255,0.7); }
+    .diff-col.b5 ul li .marker { color: var(--teal); }
+
+    /* ── WHAT IT REPLACES ── */
+    .replaces-section { background: var(--light-bg2); }
+
+    .replaces-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .replaces-item {
+      background: var(--white);
+      border: 1px solid rgba(27,58,92,0.1);
+      border-radius: 10px;
+      padding: 20px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .replaces-arrow {
+      flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+
+    .replaces-item p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    /* ── SLIDE 4: HOW IT WORKS ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 52px;
+    }
+
+    .step-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 32px 28px;
+      box-shadow: 0 2px 16px rgba(27,58,92,0.07);
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: 18px;
+    }
+
+    .step-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .step-card p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ── SLIDE 5: INCLUDED ── */
+    .included-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 52px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 22px;
+      border-radius: 10px;
+      background: var(--light-bg);
+    }
+
+    .check-item-icon { flex-shrink: 0; margin-top: 1px; }
+
+    .check-item p {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+
+    /* ── SLIDE 6: RESEARCH ── */
+    .stat-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+      margin-bottom: 48px;
+    }
+
+    .stat-card {
+      background: var(--light-bg);
+      border-top: 3px solid var(--teal);
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+
+    .stat-number {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -2px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .stat-number span { color: var(--navy); }
+
+    .stat-card p {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.55;
+    }
+
+    .stat-source {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .research-body {
+      font-size: 17px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 680px;
+      margin-bottom: 36px;
+    }
+
+    .research-bridge {
+      background: var(--light-bg);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 28px;
+      margin-bottom: 28px;
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      max-width: 720px;
+    }
+    .research-bridge strong { color: var(--navy); }
+
+    .sfu-box {
+      background: var(--navy);
+      border-left: 4px solid rgba(255,255,255,0.2);
+      border-radius: 0 12px 12px 0;
+      padding: 28px 32px;
+      max-width: 720px;
+    }
+
+    .sfu-box p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.65;
+    }
+
+    .sfu-box strong { color: var(--white); }
+
+    /* ── SLIDE 7: WHY BETTER5 ── */
+    .slide-why { background: var(--navy); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 52px;
+    }
+
+    .why-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 28px 24px;
+      border-top: 3px solid rgba(255,255,255,0.15);
+    }
+
+    .why-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .why-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .why-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    /* ── PRICING ── */
+    .pricing-subhead {
+      font-size: 18px;
+      color: var(--text-mid);
+      margin-top: 12px;
+      margin-bottom: 32px;
+    }
+
+    /* BILLING TOGGLE */
+    .billing-toggle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .toggle-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .toggle-label.active { color: var(--navy); }
+    .toggle-switch {
+      position: relative;
+      width: 52px;
+      height: 28px;
+      cursor: pointer;
+    }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .toggle-track {
+      position: absolute;
+      inset: 0;
+      background: var(--teal);
+      border-radius: 50px;
+      transition: background 0.2s;
+    }
+    .toggle-thumb {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    input:not(:checked) ~ .toggle-track { background: #ccc; }
+    input:not(:checked) ~ .toggle-thumb { transform: translateX(0); }
+    input:checked ~ .toggle-thumb { transform: translateX(24px); }
+    .save-badge {
+      background: #e8f5f1;
+      color: #2a7a64;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 32px;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px 36px;
+      box-shadow: 0 2px 20px rgba(27,58,92,0.09);
+      border: 1.5px solid rgba(27,58,92,0.1);
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--teal);
+      box-shadow: 0 4px 32px rgba(76,184,160,0.2);
+    }
+
+    .pricing-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--teal);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .pricing-tier {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .pricing-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 4px;
+    }
+
+    .pricing-currency {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .pricing-amount {
+      font-size: 52px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -2px;
+      line-height: 1;
+    }
+
+    .pricing-period {
+      font-size: 16px;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .pricing-bill-note {
+      font-size: 13px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      min-height: 18px;
+    }
+
+    .pricing-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(27,58,92,0.08);
+      margin: 20px 0;
+    }
+
+    .pricing-features { list-style: none; }
+
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .pricing-features li svg { flex-shrink: 0; margin-top: 2px; }
+
+    .pricing-note {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 20px;
+      line-height: 1.5;
+      border-top: 1px solid rgba(27,58,92,0.07);
+      padding-top: 16px;
+    }
+
+    .custom-content-note {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      max-width: 620px;
+      padding: 24px 28px;
+      background: var(--white);
+      border-radius: 10px;
+      border: 1px solid rgba(27,58,92,0.1);
+    }
+
+    .custom-content-note strong { color: var(--navy); }
+
+    /* ── DEMO CTA ── */
+    .demo-cta-block {
+      margin-top: 64px;
+      margin-left: auto;
+      margin-right: auto;
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 56px 48px;
+      text-align: center;
+      max-width: 820px;
+    }
+
+    .demo-cta-block h3 {
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .demo-cta-block p {
+      font-size: 17px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+      max-width: 480px;
+      margin: 0 auto 36px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 700;
+      padding: 18px 40px;
+      border-radius: 100px;
+      text-decoration: none;
+      letter-spacing: -0.2px;
+      transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 24px rgba(76,184,160,0.35);
+    }
+
+    .cta-button:hover { background: #3da990; transform: translateY(-2px); }
+
+    .cta-email {
+      font-size: 14px;
+      color: rgba(255,255,255,0.38);
+      margin-top: 20px;
+    }
+
+    .cta-email a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+    }
+
+    .cta-email a:hover { color: var(--teal); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text-dark);
+      padding: 32px 48px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--teal); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      section { padding: 64px 24px; }
+      .site-header { padding: 16px 24px; top: 0; }
+
+      .problem-cards,
+      .outcomes-cards,
+      .solution-points,
+      .steps-grid,
+      .included-grid,
+      .stat-cards,
+      .pricing-cards,
+      .why-grid,
+      .diff-table,
+      .replaces-grid { grid-template-columns: 1fr; }
+
+      .hero { padding-left: 24px; padding-right: 24px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-photo { max-width: 100%; aspect-ratio: 3/4; }
+      .demo-cta-block { padding: 40px 24px; }
+      footer { padding: 28px 24px; }
+
+      /* diff-table: stack cols, add border separation */
+      .diff-col { padding: 28px 24px; }
+      .diff-col.b5 { border-left: none; border-top: 3px solid rgba(76,184,160,0.6); }
+
+      /* Pricing cards: full width, comfortable */
+      .pricing-card { padding: 36px 28px; }
+      .pricing-cards { max-width: 100%; }
+
+      /* Billing toggle: larger touch targets */
+      .toggle-switch { width: 48px; height: 26px; }
+      .toggle-thumb { width: 18px; height: 18px; top: 4px; }
+      input:checked ~ .toggle-thumb { transform: translateX(22px); }
+
+      /* Hero who-box: full width */
+      .hero-who { max-width: 100%; }
+
+      /* Replaces grid: 2-col */
+      .replaces-grid { grid-template-columns: 1fr 1fr; }
+
+      /* Why grid: 2-col */
+      .why-grid { grid-template-columns: 1fr 1fr; }
+
+      /* Included: 2-col */
+      .included-grid { grid-template-columns: 1fr 1fr; }
+
+      /* Solution points: 2-col */
+      .solution-points { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      section { padding: 56px 18px; }
+      .site-header { padding: 14px 18px; }
+      .hero { padding-left: 18px; padding-right: 18px; padding-top: 120px; }
+      .hero h1 { letter-spacing: -0.5px; }
+      .stat-number { font-size: 38px; }
+      .pricing-amount { font-size: 42px; }
+
+      /* All 2-col grids collapse to 1 on small phones */
+      .replaces-grid,
+      .why-grid,
+      .included-grid,
+      .solution-points,
+      .outcomes-cards { grid-template-columns: 1fr; }
+
+      /* Demo CTA block */
+      .demo-cta-block { padding: 36px 20px; border-radius: 14px; }
+      .cta-button { font-size: 15px; padding: 16px 28px; }
+
+      /* Billing toggle label size */
+      .toggle-label { font-size: 13px; }
+
+      /* Stat cards: full width */
+      .stat-cards { grid-template-columns: 1fr; }
+
+      /* Problem cards */
+      .problem-cards { grid-template-columns: 1fr; }
+
+      /* Steps */
+      .steps-grid { grid-template-columns: 1fr; }
+
+      /* Hero who list items */
+      .hero-who ul li { font-size: 14px; }
+      .hero-who-text strong { font-size: 13px; }
+      .hero-who-text span { font-size: 12px; }
+
+      /* Research bridge/sfu box */
+      .research-bridge { padding: 18px 20px; }
+      .sfu-box { padding: 22px 20px; }
+
+      /* Section headings */
+      h2 { font-size: 26px; letter-spacing: -0.4px; }
+      .section-subhead { font-size: 16px; }
+
+      footer { padding: 24px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a class="logo" href="https://partners.better5.com">
+      <span class="logo-wordmark">Better<span>5</span></span>
+      <span class="logo-sub">for Senior Living</span>
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="section-inner">
+      <div class="hero-inner">
+      <div>
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L8.545 5.09H13L9.545 7.68L10.91 12L7 9.27L3.09 12L4.455 7.68L1 5.09H5.455L7 1Z" fill="rgba(255,255,255,0.7)"/></svg>
+        For Senior Living Communities
+      </div>
+      <h1>The Better<span>5</span><br>Movement Method</h1>
+      <p class="hero-subhead">A structured movement system for senior living that runs consistently — even when staff changes.</p>
+      <div class="hero-divider"></div>
+
+      <!-- Who This Is For — outcome-focused -->
+      <div class="hero-who">
+        <div class="hero-who-label">Designed for communities that want</div>
+        <ul>
+          <li>
+            <div class="hero-who-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5V11C4 16.5 7.8 21.5 12 22C16.2 21.5 20 16.5 20 11V5L12 2Z" stroke="#4cb8a0" stroke-width="2" stroke-linejoin="round"/><path d="M9 12L11 14L15 10" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="hero-who-text">
+              <strong>To reduce falls — and the fear that comes with them</strong>
+              <span>Independent living communities where residents want to stay active and on their feet longer.</span>
+            </div>
+          </li>
+          <li>
+            <div class="hero-who-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#4cb8a0" stroke-width="2"/><path d="M4 20C4 16.7 7.6 14 12 14C16.4 14 20 16.7 20 20" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <div class="hero-who-text">
+              <strong>A safer way to deliver movement for higher-need residents</strong>
+              <span>Assisted living facilities where staff need a system they can confidently run — without a fitness background.</span>
+            </div>
+          </li>
+          <li>
+            <div class="hero-who-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#4cb8a0" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="hero-who-text">
+              <strong>More meaningful daily interaction for memory care residents</strong>
+              <span>Memory care settings where structured, gentle movement creates moments of engagement and connection.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      </div><!-- end left col -->
+      <div class="hero-photo">
+        <img src="hero-resident.jpg" alt="Senior resident doing chair exercise with arms extended" />
+      </div>
+      </div><!-- end hero-inner -->
+    </div>
+  </section>
+
+  <!-- SLIDE 1: THE PROBLEM -->
+  <section class="slide-problem">
+    <div class="section-inner">
+      <div class="section-label-on-dark">The Problem</div>
+      <h2 class="on-dark">Most fitness programs in senior living depend on one person.</h2>
+      <p class="problem-intro">When that person leaves, the program collapses.</p>
+      <div class="problem-cards">
+
+        <div class="problem-card">
+          <div class="problem-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><path d="M3 9H21" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round"/><path d="M8 2V5M16 2V5" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round"/><path d="M7 13H9M7 17H12" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Inconsistent classes with no structure or progression</h3>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 3V18C3 19.1 3.9 20 5 20H21" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round"/><path d="M7 14L11 10L14 13L19 7" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>No way to show families or ownership that residents are actually moving</h3>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="6" r="3" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><path d="M3 20C3 16.7 5.7 14 9 14" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round"/><path d="M17 14L21 18M21 14L17 18" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Staff turnover resets everything — and the cycle starts over</h3>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- SLIDE 2: WHAT RESIDENTS NEED -->
+  <section style="background: var(--light-bg);">
+    <div class="section-inner">
+      <div class="section-label">What Residents Need</div>
+      <h2>Four outcomes that matter.</h2>
+      <div class="outcomes-cards">
+
+        <div class="outcome-card">
+          <div class="outcome-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5V11C4 16.5 7.8 21.5 12 22C16.2 21.5 20 16.5 20 11V5L12 2Z" stroke="#4cb8a0" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12L11 14L15 10" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Fall Prevention</h3>
+          <p>Structured balance and stability training, built into every session.</p>
+        </div>
+
+        <div class="outcome-card">
+          <div class="outcome-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9H4C3.4 9 3 9.4 3 10V14C3 14.6 3.4 15 4 15H6M18 9H20C20.6 9 21 9.4 21 10V14C21 14.6 20.6 15 20 15H18M6 7V17M18 7V17M6 12H18" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Gentle Functional Strengthening</h3>
+          <p>Safe, progressive strength work residents can actually do.</p>
+        </div>
+
+        <div class="outcome-card">
+          <div class="outcome-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="7" r="3" stroke="#4cb8a0" stroke-width="1.8"/><circle cx="17" cy="9" r="2.5" stroke="#4cb8a0" stroke-width="1.8"/><path d="M3 20C3 17.2 5.7 15 9 15C12.3 15 15 17.2 15 20M15 16C15.7 15.4 16.8 15 17 15C19.2 15 21 16.8 21 19" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Community Engagement</h3>
+          <p>Programming residents want to show up for, week after week.</p>
+        </div>
+
+        <div class="outcome-card">
+          <div class="outcome-card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 17L8 12L12 15L17 9L21 12" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 9H21V13" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Increased Activity Levels</h3>
+          <p>Consistent participation you can measure and report.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BREAK 1 -->
+  <div style="position:relative;height:420px;overflow:hidden;">
+    <img src="https://plus.unsplash.com/premium_photo-1661376831448-ca91becb6f98?w=1600&q=85&fit=crop" alt="Group of seniors doing gentle exercises together" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;" />
+    <div style="position:absolute;inset:0;background:rgba(27,58,92,0.55);display:flex;align-items:center;justify-content:center;">
+      <p style="color:#fff;font-size:clamp(17px,2.2vw,24px);font-weight:700;text-align:center;max-width:600px;line-height:1.4;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,0.4);">Movement programming residents look forward to — and staff can confidently run.</p>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: THE SOLUTION -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <div class="section-label">The Solution</div>
+      <h2>The Better5 Movement Method</h2>
+      <p class="section-subhead">A plug-in programming framework built for senior living.</p>
+      <div class="solution-points">
+
+        <div class="solution-point">
+          <div class="solution-point-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="solution-point-text">
+            <h3>Works on any screen</h3>
+            <p>Runs on any TV, tablet, laptop, or phone — nothing to install.</p>
+          </div>
+        </div>
+
+        <div class="solution-point">
+          <div class="solution-point-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="solution-point-text">
+            <h3>No fitness background needed</h3>
+            <p>Any staff member can facilitate — the system guides the class.</p>
+          </div>
+        </div>
+
+        <div class="solution-point">
+          <div class="solution-point-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="solution-point-text">
+            <h3>Survives staff turnover</h3>
+            <p>The program lives in the system, not one person.</p>
+          </div>
+        </div>
+
+        <div class="solution-point">
+          <div class="solution-point-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="solution-point-text">
+            <h3>Same-week launch</h3>
+            <p>Onboarding call, facilitation guide, and you're running.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="staff-confidence">
+        <div class="staff-confidence-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><path d="M4 20C4 16.7 7.6 14 12 14C16.4 14 20 16.7 20 20" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div>
+        <div>
+          <strong>Staff Confidence</strong>
+          <span>Every staff member — regardless of fitness background — can safely deploy movement programming to residents. They're facilitating, not instructing. The expertise is already on screen.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIATION SLIDE -->
+  <section class="slide-diff">
+    <div class="section-inner">
+      <div class="section-label-on-dark">Why Better5 Is Different</div>
+      <h2 class="on-dark">Makes movement safer for residents — and simpler for the team delivering it.</h2>
+      <p class="diff-tagline">Designed around the real constraints of senior living: limited staff bandwidth, high turnover, and residents who need consistency to see results.</p>
+
+      <div class="diff-table">
+        <div class="diff-col others">
+          <div class="diff-col-label">Common challenges</div>
+          <ul>
+            <li><span class="marker">→</span> Programming relies on one person's time and knowledge</li>
+            <li><span class="marker">→</span> Sessions vary depending on who's running them that day</li>
+            <li><span class="marker">→</span> Staff feel underprepared leading fitness activities</li>
+            <li><span class="marker">→</span> New hires rebuild the program from scratch</li>
+            <li><span class="marker">→</span> Hard to show families residents are active</li>
+            <li><span class="marker">→</span> Scaling wellness across multiple sites is complex</li>
+          </ul>
+        </div>
+        <div class="diff-col b5">
+          <div class="diff-col-label">How Better5 helps</div>
+          <ul>
+            <li><span class="marker">✓</span> System-led programming — staff facilitate, Better5 instructs</li>
+            <li><span class="marker">✓</span> Consistent structured sessions, every time</li>
+            <li><span class="marker">✓</span> No fitness background needed — staff feel confident from day one</li>
+            <li><span class="marker">✓</span> New staff are up and running in a single onboarding call</li>
+            <li><span class="marker">✓</span> Monthly participation reports delivered automatically</li>
+            <li><span class="marker">✓</span> One flat fee scales across your entire portfolio</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT REPLACES / ENHANCES -->
+  <section class="replaces-section">
+    <div class="section-inner">
+      <div class="section-label">Where Better5 Adds Value</div>
+      <h2>Enhance what you already have — without adding more to your team's plate.</h2>
+      <p class="section-subhead">Most communities already offer some form of programming. Better5 brings structure, consistency, and confidence to what's already in place.</p>
+      <div class="replaces-grid">
+        <div class="replaces-item">
+          <div class="replaces-arrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M13 6L19 12L13 18" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p><strong>One-off or sporadic fitness sessions</strong> become a reliable, structured weekly program residents look forward to</p>
+        </div>
+        <div class="replaces-item">
+          <div class="replaces-arrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M13 6L19 12L13 18" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p><strong>Staff-led sessions</strong> get a proven curriculum behind them — no fitness expertise needed</p>
+        </div>
+        <div class="replaces-item">
+          <div class="replaces-arrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M13 6L19 12L13 18" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p><strong>External instructors</strong> are complemented or replaced by on-demand, always-available programming</p>
+        </div>
+        <div class="replaces-item">
+          <div class="replaces-arrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M13 6L19 12L13 18" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p><strong>YouTube or online videos</strong> are upgraded to a structured, progression-based library built for 60+</p>
+        </div>
+        <div class="replaces-item">
+          <div class="replaces-arrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M13 6L19 12L13 18" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p><strong>Inconsistent programming</strong> becomes something residents can count on, week after week</p>
+        </div>
+        <div class="replaces-item">
+          <div class="replaces-arrow">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M13 6L19 12L13 18" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p><strong>Unused equipment</strong> gets a program around it — or Better5 runs independently without any of it</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="background: var(--light-bg2);">
+    <div class="section-inner">
+      <div class="section-label">How It Works</div>
+      <h2>Up and running in days, not months.</h2>
+      <div class="steps-grid">
+
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Onboarding call</h3>
+          <p>We set up your account and walk your team through the system — end to end.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Staff follow the facilitation guide</h3>
+          <p>No fitness expertise needed. Your team facilitates; Better5 instructs.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Run sessions on any shared device</h3>
+          <p>Residents can follow the instructor directly on screen, or a staff member can facilitate using our guide — whichever fits your facility's style. Both work.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Monthly reports to your inbox</h3>
+          <p>Participation data delivered automatically — nothing to pull or compile.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BREAK 2 -->
+  <div style="position:relative;height:420px;overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1702648158754-484755fadf79?w=1600&q=85&fit=crop" alt="Seniors doing chair balance exercises in a group class" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;" />
+    <div style="position:absolute;inset:0;background:rgba(13,36,64,0.45);"></div>
+  </div>
+
+  <!-- WHAT'S INCLUDED -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <div class="section-label">What's Included</div>
+      <h2>Everything your facility needs.<br>Nothing it doesn't.</h2>
+      <div class="included-grid">
+
+        <div class="check-item">
+          <div class="check-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>Full weekly class library (balance, strength, mobility, endurance, mind)</p>
+        </div>
+
+        <div class="check-item">
+          <div class="check-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>Staff facilitation guide + video walkthrough</p>
+        </div>
+
+        <div class="check-item">
+          <div class="check-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>Monthly participation reports</p>
+        </div>
+
+        <div class="check-item">
+          <div class="check-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>Unlimited residents — flat monthly fee</p>
+        </div>
+
+        <div class="check-item">
+          <div class="check-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>SFU research partnership</p>
+        </div>
+
+        <div class="check-item">
+          <div class="check-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>Co-branded materials available</p>
+        </div>
+
+        <div class="check-item">
+          <div class="check-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>Dedicated account executive</p>
+        </div>
+
+        <div class="check-item">
+          <div class="check-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="1.8"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <p>Onboarding support</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BREAK 3 -->
+  <div style="position:relative;height:420px;overflow:hidden;">
+    <img src="https://images.unsplash.com/photo-1773227060944-dc7b00b09ae2?w=1600&q=85&fit=crop" alt="Elderly residents enjoying a group activity together" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;" />
+    <div style="position:absolute;inset:0;background:rgba(27,58,92,0.55);display:flex;align-items:center;justify-content:center;">
+      <p style="color:#fff;font-size:clamp(17px,2.2vw,24px);font-weight:700;text-align:center;max-width:600px;line-height:1.4;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,0.4);">Built on the same evidence-based principles that clinical research shows work.</p>
+    </div>
+  </div>
+
+  <!-- THE RESEARCH -->
+  <section style="background: var(--white);">
+    <div class="section-inner">
+      <div class="section-label">The Research</div>
+      <h2>Grounded in published fall prevention evidence.</h2>
+      <div class="stat-cards">
+
+        <div class="stat-card">
+          <div class="stat-number"><span>#</span>1</div>
+          <p>Falls are the leading cause of injury-related death among Canadians 60+.</p>
+          <p class="stat-source">Source: Public Health Agency of Canada (PHAC)</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number"><span>36</span>%</div>
+          <p>Reduction in falls from a BC exercise-based fall prevention program.</p>
+          <p class="stat-source">Source: UBCO / Maturitas 2026</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-number"><span>$</span>2.8B</div>
+          <p>Annual cost of falls to the Canadian healthcare system.</p>
+          <p class="stat-source">Source: Public Health Agency of Canada (PHAC)</p>
+        </div>
+
+      </div>
+
+      <p class="research-body">Better5 is built on the same exercise principles — balance training, functional strength, and consistent group-based programming — that the research shows work.</p>
+
+      <div class="research-bridge">
+        <strong>The same principles used in clinically validated fall reduction programs</strong> — balance training, functional strength, and consistent group-based movement — adapted for scalable, staff-facilitated group delivery in senior living.
+      </div>
+
+      <div class="sfu-box">
+        <p><strong>SFU Research Partnership</strong><br><br>Better5 is working with Dr. Theodore Cosco, Associate Professor at Simon Fraser University's Department of Gerontology, on an ongoing research partnership.</p>
+      </div>
+
+      <div class="research-bridge" style="margin-top:24px;margin-bottom:0;">
+        <strong>About our instructors</strong><br>
+        Better5 programming is led by kinesiologists and certified fitness professionals. Instructors across the platform hold a range of credentials in senior and therapeutic exercise — all vetted to ensure safe, appropriate programming for older adults.
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY BETTER5 — now above pricing -->
+  <section class="slide-why">
+    <div class="section-inner">
+      <div class="section-label-on-dark">Why Better5</div>
+      <h2 class="on-dark">Why facilities choose the Better5 Movement Method.</h2>
+      <div class="why-grid">
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><path d="M8 21H16M12 17V21" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Zero IT lift</h3>
+          <p>Runs in any browser, nothing to install, no IT department required.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 5V11C4 16.5 7.8 21.5 12 22C16.2 21.5 20 16.5 20 11V5L12 2Z" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12L11 14L15 10" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Survives staff turnover</h3>
+          <p>The program is in the system, not one person — continuity guaranteed.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="2" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><path d="M9 9L7 14H10L9 19M15 9L17 14H14L15 19M9 9H15" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Fall prevention in every session</h3>
+          <p>Balance and stability built into the curriculum — not an afterthought.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 4 15 4 9C4 6.8 5.8 5 8 5C9.5 5 10.8 5.8 11.5 7L12 8L12.5 7C13.2 5.8 14.5 5 16 5C18.2 5 20 6.8 20 9C20 15 12 21 12 21Z" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Designed for all mobility levels</h3>
+          <p>Gentle movements with seated and supported options — suitable for a wide range of resident abilities.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 3V18C3 19.1 3.9 20 5 20H21" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linecap="round"/><rect x="7" y="11" width="3" height="7" rx="1" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><rect x="12" y="8" width="3" height="10" rx="1" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/><rect x="17" y="5" width="3" height="13" rx="1" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Measurable engagement</h3>
+          <p>Monthly participation reports delivered automatically — no manual tracking.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 3H15V10L18 17C18.5 18.2 17.6 19.5 16.3 19.5H7.7C6.4 19.5 5.5 18.2 6 17L9 10V3ZM9 3H15" stroke="rgba(255,255,255,0.6)" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M7 15H17" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Research-grounded</h3>
+          <p>Built on published fall prevention evidence, with an ongoing SFU partnership.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO HIGHLIGHT -->
+  <section style="background: linear-gradient(135deg, rgba(76,184,160,0.08) 0%, rgba(76,184,160,0.04) 100%); padding: 72px 24px; text-align: center;">
+    <div style="max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; align-items: center;">
+      <div style="width: 340px; height: 420px; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.15); margin-bottom: 36px; flex-shrink: 0;">
+        <img src="resident-fists.jpg" alt="Senior resident celebrating with determination and strength" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block;" />
+      </div>
+      <p style="font-size: 20px; font-weight: 600; color: var(--navy); line-height: 1.5; margin: 0;">Built for residents who want to stay strong, confident, and independent.</p>
+    </div>
+  </section>
+
+  <!-- PRICING — now after Why Better5 -->
+  <section style="background: var(--light-bg);">
+    <div class="section-inner">
+      <div class="section-label">Pricing</div>
+      <h2>Simple, flat-rate pricing.</h2>
+      <p class="pricing-subhead">Annual or monthly. Unlimited residents. No per-head surprises.</p>
+
+      <!-- BILLING TOGGLE -->
+      <div class="billing-toggle">
+        <span class="toggle-label" id="lbl-monthly-v2">Monthly</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="billing-switch-v2" checked onchange="switchBillingV2(this)">
+          <span class="toggle-track"></span>
+          <span class="toggle-thumb"></span>
+        </label>
+        <span class="toggle-label active" id="lbl-annual-v2">Annual</span>
+        <span class="save-badge" id="save-badge-v2">Save up to $593/yr</span>
+      </div>
+
+      <div class="pricing-cards">
+
+        <!-- Essential -->
+        <div class="pricing-card">
+          <div class="pricing-tier">Essential</div>
+          <div class="pricing-price">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-amount" id="price-essential-v2">108</span>
+            <span class="pricing-period" id="per-essential-v2">/mo</span>
+          </div>
+          <p id="mo-equiv-essential-v2" style="display:none;"></p>
+          <p class="pricing-bill-note" id="note-essential-v2">Billed annually at $1,295/yr</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited residents</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Full class library — all 5 pillars</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Staff facilitation guide</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Monthly participation reports</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Email support</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Onboarding call</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated account executive</li>
+          </ul>
+          <p class="pricing-note">Minimum term applies. One-time onboarding fee applies.</p>
+        </div>
+
+        <!-- Complete -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-tier">Complete</div>
+          <div class="pricing-price">
+            <span class="pricing-currency">$</span>
+            <span class="pricing-amount" id="price-complete-v2">250</span>
+            <span class="pricing-period" id="per-complete-v2">/mo</span>
+          </div>
+          <p id="mo-equiv-complete-v2" style="display:none;"></p>
+          <p class="pricing-bill-note" id="note-complete-v2">Billed annually at $2,995/yr</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Essential</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority support</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Re-onboarding on staff turnover</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Direct virtual instructor sessions</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Open API for family engagement reports</li>
+          </ul>
+          <p class="pricing-note">Minimum term applies. One-time onboarding fee applies.</p>
+        </div>
+
+      </div>
+
+      <p style="font-size:13px;color:var(--text-light);margin-bottom:32px;text-align:center;">All prices in CAD, excluding GST. Minimum term applies.</p>
+
+      <!-- Custom Content card — matches partners.better5.com/pricing -->
+      <div style="max-width:820px;margin-left:auto;margin-right:auto;background:var(--white);border-radius:16px;padding:40px 36px;box-shadow:0 2px 20px rgba(27,58,92,0.09);border:1.5px solid rgba(27,58,92,0.1);margin-bottom:32px;">
+        <div class="pricing-tier" style="margin-bottom:8px;">Custom Content</div>
+        <div style="font-size:22px;font-weight:800;color:var(--navy);margin-bottom:4px;">Pricing on request</div>
+        <p style="font-size:14px;color:var(--text-light);margin-bottom:20px;">Every facility is different. Tell us what you're looking for and we'll put together a proposal tailored to your needs.</p>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Custom-filmed class content
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Tailored to your resident population
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Co-branded or white-label options
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#4cb8a0" stroke-width="2"/><path d="M8 12L11 15L16 9" stroke="#4cb8a0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Specialty programs (dementia, post-rehab, and more)
+          </li>
+        </ul>
+        <div style="margin-top:24px;">
+          <a href="contact.html?source=method" style="display:inline-block;background:var(--navy);color:#fff;font-size:14px;font-weight:700;padding:12px 28px;border-radius:50px;text-decoration:none;">Inquire About Custom Content →</a>
+        </div>
+      </div>
+
+      <!-- DEMO CTA — replaces old CTA slide -->
+      <div class="demo-cta-block">
+        <h3>Book a free 20-minute demo</h3>
+        <p>No pressure, no sales pitch. A real conversation about whether Better5 is the right fit for your facility.</p>
+        <a href="contact.html?source=method" class="cta-button">
+          Book a Free Demo
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M13 6L19 12L13 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="cta-email">Or reach us at <a href="mailto:partners@better5.com">partners@better5.com</a></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Better5 &middot; <a href="mailto:partners@better5.com">partners@better5.com</a> &middot; <a href="https://better5.com">better5.com</a></p>
+  </footer>
+
+  <!-- PostHog -->
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+" (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_ru5aBEst81batGjqgUh88EFHlYCxEikwHKEjdrkN0MW', {
+      api_host: 'https://us.i.posthog.com',
+      person_profiles: 'identified_only'
+    });
+
+    function switchBillingV2(el) {
+      var annual = el.checked;
+      if (annual) {
+        document.getElementById('price-essential-v2').textContent = '108';
+        document.getElementById('per-essential-v2').textContent   = '/mo';
+        document.getElementById('note-essential-v2').textContent  = 'Billed annually at $1,295/yr';
+        document.getElementById('price-complete-v2').textContent  = '250';
+        document.getElementById('per-complete-v2').textContent    = '/mo';
+        document.getElementById('note-complete-v2').textContent   = 'Billed annually at $2,995/yr';
+      } else {
+        document.getElementById('price-essential-v2').textContent = '129';
+        document.getElementById('per-essential-v2').textContent   = '/mo';
+        document.getElementById('note-essential-v2').textContent  = 'Billed monthly · Minimum term applies';
+        document.getElementById('price-complete-v2').textContent  = '299';
+        document.getElementById('per-complete-v2').textContent    = '/mo';
+        document.getElementById('note-complete-v2').textContent   = 'Billed monthly · Minimum term applies';
+      }
+      document.getElementById('lbl-annual-v2').classList.toggle('active', annual);
+      document.getElementById('lbl-monthly-v2').classList.toggle('active', !annual);
+      document.getElementById('save-badge-v2').style.display = annual ? '' : 'none';
+      document.getElementById('mo-equiv-essential-v2').style.display = 'none';
+      document.getElementById('mo-equiv-complete-v2').style.display  = 'none';
+    }
+
+    // Set initial state
+    switchBillingV2(document.getElementById('billing-switch-v2'));
+  </script>
+
+</body>
+</html>

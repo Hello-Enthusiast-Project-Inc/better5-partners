@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Program — 5 Pillars of Healthy Aging | Better5 for Senior Living</title>
+  <meta name="description" content="Better5 delivers structured fitness programming across 5 pillars of healthy aging: Balance, Strength, Mobility, Endurance, and Mind. Built for seniors. Easy for staff.">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Helvetica Neue',Arial,sans-serif;background:#fff;color:#1a1a1a;line-height:1.6;}
+    a{text-decoration:none;}
+
+    /* NAV */
+    nav{background:#1b3a5c;padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:68px;position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,0.2);}
+    .nav-logo{color:#fff;font-size:22px;font-weight:800;letter-spacing:-0.5px;white-space:nowrap;}
+    .nav-logo span{color:#4cb8a0;}
+    .nav-logo small{display:block;font-size:10px;font-weight:400;color:#7a9db5;letter-spacing:1px;text-transform:uppercase;margin-top:-2px;}
+    .nav-links{display:flex;align-items:center;gap:28px;}
+    .nav-links a{color:#c0d8e8;font-size:14px;font-weight:500;transition:color 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:#fff;}
+    .nav-cta{background:#4cb8a0;color:#fff!important;font-size:13px;font-weight:700;padding:10px 22px;border-radius:50px;white-space:nowrap;}
+    .nav-cta:hover{background:#3da88e!important;}
+    
+    /* Hamburger Menu */
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;margin:0 -8px 0 0;}
+    .hamburger span{width:24px;height:2.5px;background:#fff;border-radius:2px;transition:all 0.3s ease;}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px);}
+    .hamburger.active span:nth-child(2){opacity:0;}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(7px,-7px);}
+    
+    .nav-mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:#1b3a5c;padding:24px 20px;overflow-y:auto;flex-direction:column;gap:0;z-index:999;animation:slideDown 0.3s ease;}
+    .nav-mobile-menu.active{display:flex;}
+    @keyframes slideDown{from{transform:translateY(-10px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+    .nav-mobile-menu a{color:#c0d8e8;font-size:16px;font-weight:500;padding:16px 16px;border-bottom:1px solid rgba(255,255,255,0.1);transition:color 0.2s;}
+    .nav-mobile-menu a:hover,.nav-mobile-menu a.active{color:#fff;background:rgba(76,184,160,0.1);}
+    .nav-mobile-menu .nav-cta{width:100%;text-align:center;border-bottom:none;padding:14px 16px;margin-top:8px;background:#4cb8a0;}
+    
+    @media(max-width:768px){
+      nav{padding:0 12px;}
+      .nav-links{display:none;}
+      .hamburger{display:flex;}
+    }
+
+    /* HERO */
+    .hero{position:relative;color:#fff;padding:88px 40px 96px;text-align:center;overflow:hidden;}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1b3a5c 0%,#0d2440 100%);z-index:0;}
+    .hero-bg::after{content:'';}
+    .hero>*:not(.hero-bg){position:relative;z-index:1;}
+    .hero-badge{display:inline-block;background:rgba(76,184,160,0.18);border:1px solid rgba(76,184,160,0.5);color:#4cb8a0;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:28px;}
+    .hero h1{font-size:clamp(30px,5vw,52px);font-weight:800;line-height:1.15;max-width:700px;margin:0 auto 20px;}
+    .hero h1 em{color:#4cb8a0;font-style:normal;}
+    .hero-sub{font-size:18px;color:#a0bdd0;max-width:600px;margin:0 auto;line-height:1.7;}
+
+    /* SECTION */
+    .section{padding:80px 40px;}
+    .section-inner{max-width:1040px;margin:0 auto;}
+    .section-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#4cb8a0;margin-bottom:12px;}
+    .section-title{font-size:clamp(24px,3vw,34px);font-weight:800;color:#1b3a5c;margin-bottom:16px;line-height:1.25;}
+    .section-sub{font-size:17px;color:#666;line-height:1.7;margin-bottom:48px;}
+
+    /* PILLAR DETAIL */
+    .pillar-detail{display:flex;gap:48px;align-items:flex-start;margin-bottom:72px;flex-wrap:wrap;}
+    .pillar-detail:nth-child(even){flex-direction:row-reverse;}
+    .pillar-icon-block{flex:0 0 160px;background:linear-gradient(135deg,#1b3a5c,#0d2440);border-radius:24px;padding:40px 24px;text-align:center;color:#fff;}
+    .pillar-icon-block .icon{font-size:48px;display:block;margin-bottom:12px;}
+    .pillar-icon-block .num{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#4cb8a0;margin-bottom:6px;}
+    .pillar-icon-block h3{font-size:20px;font-weight:800;color:#fff;}
+    .pillar-content{flex:1;min-width:260px;}
+    .pillar-content h3{font-size:22px;font-weight:800;color:#1b3a5c;margin-bottom:12px;}
+    .pillar-content p{font-size:16px;color:#555;line-height:1.75;margin-bottom:16px;}
+    .pillar-bullets{list-style:none;margin-top:8px;}
+    .pillar-bullets li{font-size:15px;color:#444;padding:8px 0;border-bottom:1px solid #f0f0f0;display:flex;align-items:flex-start;gap:10px;}
+    .pillar-bullets li .check-svg{flex-shrink:0;margin-top:2px;}
+
+    /* WEEK SCHEDULE */
+    .schedule-table{width:100%;border-collapse:collapse;margin-top:32px;}
+    .schedule-table th{background:#1b3a5c;color:#fff;font-size:13px;font-weight:700;padding:14px 16px;text-align:left;}
+    .schedule-table td{padding:16px;font-size:15px;border-bottom:1px solid #e8eff5;vertical-align:top;}
+    .schedule-table tr:nth-child(even) td{background:#f8fafb;}
+    .schedule-table .day{font-weight:700;color:#1b3a5c;white-space:nowrap;}
+    .schedule-table .pillar-tag{display:inline-block;background:#e8f5f1;color:#2a8a72;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;text-transform:uppercase;letter-spacing:1px;}
+    @media(max-width:600px){
+      .hero{text-align:center;}
+      .section-label{text-align:center;}
+      .section-title{text-align:center;}
+      .section-sub{text-align:center;}      body{padding-bottom:80px;}
+      .schedule-table th:nth-child(3),.schedule-table td:nth-child(3){display:none;}
+      .how-section{grid-template-columns:1fr!important;gap:16px;}
+      .how-section img{height:auto!important;min-height:280px;}
+    }
+
+    /* TESTIMONIALS */
+    .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px;}
+    .testi{background:#f8fafb;border-radius:16px;padding:28px;border-top:3px solid #4cb8a0;}
+    .testi p{font-size:15px;font-style:italic;color:#333;line-height:1.75;margin-bottom:16px;}
+    .testi-name{font-size:12px;font-weight:700;color:#4cb8a0;text-transform:uppercase;letter-spacing:1px;}
+    .testi-role{font-size:11px;color:#aaa;margin-top:2px;}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,#1b3a5c 0%,#0d2440 100%);color:#fff;padding:88px 40px;text-align:center;}
+    .cta-section h2{font-size:clamp(24px,3.5vw,40px);font-weight:800;margin-bottom:16px;}
+    .cta-section p{font-size:17px;color:#a0bdd0;max-width:500px;margin:0 auto 36px;line-height:1.7;}
+    .btn-primary{background:#4cb8a0;color:#fff;font-size:17px;font-weight:700;padding:16px 36px;border-radius:50px;display:inline-block;transition:background 0.2s;}
+    .btn-primary:hover{background:#3da88e;}
+
+    /* FOOTER */
+    footer{background:#0d2440;padding:32px 40px;text-align:center;font-size:13px;color:#3a5a70;}
+    footer a{color:#4cb8a0;}
+
+    @media(max-width:768px){
+      .section{padding:48px 20px;}
+      .hero{padding:48px 20px 56px;}
+      .hero h1{font-size:22px;}
+      .hero-sub{font-size:15px;}
+      img{max-width:100%;height:auto;display:block;}
+      
+      .pillar-detail{flex-direction:column!important;gap:28px;margin-bottom:56px;}
+      .pillar-icon-block{flex:none;width:100%;padding:32px 20px;}
+      .pillar-icon-block .icon{font-size:40px;margin-bottom:10px;}
+      .pillar-icon-block h3{font-size:18px;}
+      .pillar-content h3{font-size:18px;}
+      .pillar-content p{font-size:14px;}
+      .pillar-bullets li{font-size:13px;padding:6px 0;}
+      
+      .schedule-table{font-size:13px;}
+      .schedule-table th{padding:10px 12px;font-size:12px;}
+      .schedule-table td{padding:12px;font-size:13px;}
+      .pillar-tag{font-size:10px;padding:2px 8px;}
+      
+      .testi-grid{grid-template-columns:1fr;}
+      .testi{padding:20px;}
+      .testi p{font-size:13px;}
+      
+      .cta-section{padding:48px 20px;}
+      .cta-section h2{font-size:22px;}
+      .cta-section p{font-size:15px;}
+      .btn-primary{padding:13px 24px;font-size:15px;}
+      
+      footer{padding:24px 18px;font-size:12px;}
+      .section-title{font-size:20px;}
+      .section-sub{font-size:14px;margin-bottom:28px;}
+      
+      .photo-grid-3{grid-template-columns:1fr!important;}
+      .photo-grid-2{grid-template-columns:1fr!important;}
+    }
+    @media(max-width:400px){
+      .hero h1{font-size:20px;}
+      .hero-sub{font-size:14px;}
+      .section-title{font-size:18px;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Better<span>5</span><small>for Senior Living</small></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="program.html" class="active">Program</a>
+    <a href="research.html">Research</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html" class="nav-cta" onclick="posthog.capture('demo_cta_clicked',{location:'nav'})">Book a Free Demo</a>
+  </div>
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="program.html" onclick="closeMobileMenu()" class="active">Program</a>
+  <a href="research.html" onclick="closeMobileMenu()">Research</a>
+  <a href="pricing.html" onclick="closeMobileMenu()">Pricing</a>
+  <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+  <a href="contact.html" class="nav-cta" onclick="closeMobileMenu(); posthog.capture('demo_cta_clicked',{location:'mobile_nav'})">Book a Free Demo</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-badge">The Program</div>
+  <h1><em>5 Pillars</em> of Healthy Aging</h1>
+  <p class="hero-sub">One structured program covering everything your residents need to stay strong, mobile, and mentally engaged — designed for real senior living settings.</p>
+</div>
+
+<!-- PILLARS DETAIL -->
+<div class="section">
+  <div class="section-inner">
+
+    <div class="pillar-detail">
+      <div class="pillar-icon-block">
+        <div class="num">Pillar 01</div>
+        <span class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><line x1="24" y1="6" x2="24" y2="42" stroke="#4cb8a0" stroke-width="3" stroke-linecap="round"/><line x1="10" y1="24" x2="38" y2="24" stroke="#4cb8a0" stroke-width="3" stroke-linecap="round"/><path d="M10 24l4-8 4 8" stroke="#4cb8a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M30 24l4-8 4 8" stroke="#4cb8a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>Balance</h3>
+      </div>
+      <div class="pillar-content">
+        <h3>Fall prevention starts here</h3>
+        <p>Falls are the #1 cause of injury-related death among older adults. Better5's Balance pillar directly addresses the underlying causes: weak stabilizer muscles, poor proprioception, and lack of postural confidence.</p>
+        <p>Sessions are structured, progressive, and safe — always chair-supported or standing with support available. Every resident can participate.</p>
+        <ul class="pillar-bullets">
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Stability exercises targeting ankles, hips, and core</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Proprioception training to rebuild body awareness</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Gradual confidence-building from seated to standing</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Backed by SFU fall reduction research</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pillar-detail">
+      <div class="pillar-icon-block">
+        <div class="num">Pillar 02</div>
+        <span class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M12 24h24M16 16l-8 8 8 8M32 16l8 8-8 8" stroke="#4cb8a0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Strength</h3>
+      </div>
+      <div class="pillar-content">
+        <h3>The independence your residents want</h3>
+        <p>Functional strength — the kind that helps your residents get up from a chair, carry groceries, open doors — declines with age but is highly trainable at any age. Better5 Strength sessions focus on exactly that.</p>
+        <p>No weights required. Resistance bands, bodyweight, and everyday movement patterns are all we need.</p>
+        <ul class="pillar-bullets">
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Functional strength patterns: push, pull, stand, carry</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Upper and lower body sessions, alternating through the week</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Safe progressions for all mobility levels</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Builds the strength that supports daily independence</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pillar-detail">
+      <div class="pillar-icon-block">
+        <div class="num">Pillar 03</div>
+        <span class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="14" stroke="#4cb8a0" stroke-width="3"/><circle cx="24" cy="24" r="5" stroke="#4cb8a0" stroke-width="2.5"/><path d="M24 10v4M24 34v4M10 24h4M34 24h4" stroke="#4cb8a0" stroke-width="2.5" stroke-linecap="round"/></svg></span>
+        <h3>Mobility</h3>
+      </div>
+      <div class="pillar-content">
+        <h3>Move without pain, live without limits</h3>
+        <p>Stiff joints, tight muscles, and reduced range of motion make everyday tasks harder — and increase injury risk. Better5 Mobility sessions use gentle, guided stretching and movement to ease restriction and restore comfort.</p>
+        <p>Many residents notice reduced joint pain and stiffness within the first few weeks.</p>
+        <ul class="pillar-bullets">
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Guided stretching for major muscle groups and joints</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Hip, shoulder, and spine mobility focus</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Warm-up and cool-down modules included</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Particularly beneficial for residents with arthritis</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pillar-detail">
+      <div class="pillar-icon-block">
+        <div class="num">Pillar 04</div>
+        <span class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M24 36s-14-9-14-18a8 8 0 0116 0 8 8 0 0116 0c0 9-18 18-18 18z" stroke="#4cb8a0" stroke-width="3" stroke-linejoin="round" fill="none"/></svg></span>
+        <h3>Endurance</h3>
+      </div>
+      <div class="pillar-content">
+        <h3>Energy for a full life</h3>
+        <p>Cardiovascular health and stamina are directly linked to quality of life in older adults — and low-impact endurance training is one of the most evidence-supported interventions available. Better5 makes it accessible to every resident, including those with limited mobility.</p>
+        <ul class="pillar-bullets">
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Chair-based cardio options for all mobility levels</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Seated marching, arm circles, rhythmic movement</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Builds stamina gradually without overexertion</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Supports heart health, blood pressure, and sleep</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pillar-detail">
+      <div class="pillar-icon-block">
+        <div class="num">Pillar 05</div>
+        <span class="icon"><svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M18 12c-5 2-8 7-8 12 0 6 4 11 9 13v5h10v-5c5-2 9-7 9-13 0-5-3-10-8-12" stroke="#4cb8a0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M24 22v-6M20 20l4-4 4 4" stroke="#4cb8a0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>Mind</h3>
+      </div>
+      <div class="pillar-content">
+        <h3>The pillar that surprises facilities most</h3>
+        <p>Cognitive engagement, mood, and social connection aren't "soft" outcomes — they're central to healthy aging. Better5's Mind pillar weaves mental engagement into movement, and creates the group energy that keeps residents coming back.</p>
+        <p>This is often the pillar that families notice first: "Dad seems happier. He's talking about the class."</p>
+        <ul class="pillar-bullets">
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Movement paired with memory, counting, and coordination</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Group-format design encourages peer connection</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Movement, rhythm, and joy built into every session</li>
+          <li><svg class="check-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="7" fill="#4cb8a0"/><path d="M3.5 7L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Linked to reduced depression and better sleep</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PHOTO BREAK -->
+<div style="position:relative;height:280px;overflow:hidden;">
+  <img src="https://better5.com/wp-content/uploads/2025/11/Senior-chair-yoga.png" alt="Seniors in a group fitness class" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;" />
+  <div style="position:absolute;inset:0;background:rgba(27,58,92,0.50);display:flex;align-items:center;justify-content:center;">
+    <p style="color:#fff;font-size:clamp(18px,2.5vw,28px);font-weight:700;text-align:center;max-width:600px;line-height:1.4;padding:0 24px;text-shadow:0 2px 8px rgba(0,0,0,0.4);">30 minutes or less. Five days a week. One program your residents will look forward to.</p>
+  </div>
+</div>
+
+<!-- PROGRAM IMAGERY SECTION -->
+<div class="section" style="background:#fff;padding-top:80px;padding-bottom:80px;">
+  <div class="section-inner">
+    <div class="section-label">The Experience</div>
+    <h2 class="section-title">Built for real senior living settings</h2>
+    <p class="section-sub" style="max-width:660px;">Better5 is designed to run in common rooms, activity spaces, and small-group settings — no gym required. Residents follow along on screen while a staff member facilitates. Here's what that looks like.</p>
+
+
+
+    <!-- 2-up with text callouts -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin-bottom:40px;" class="how-section">
+      <div>
+        <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.12);">
+          <img src="./real-senior-class.jpg" alt="Seniors following along with Better5 class, including wheelchair user" style="width:100%;height:auto;min-height:240px;object-fit:cover;display:block;" />
+        </div>
+      </div>
+      <div>
+        <div class="section-label" style="margin-bottom:16px;">What staff love about it</div>
+        <h3 style="font-size:22px;font-weight:800;color:#1b3a5c;margin-bottom:16px;line-height:1.3;">No fitness background needed. Just press play.</h3>
+        <p style="font-size:16px;color:#555;line-height:1.75;margin-bottom:16px;">Staff don't need to be fitness instructors. The on-screen instructor leads every session — staff are there to encourage, assist, and make sure everyone feels included.</p>
+        <p style="font-size:16px;color:#555;line-height:1.75;">A short facilitation guide for each class means any aide, recreation worker, or care staff member can run a great session from day one.</p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- WEEKLY SCHEDULE -->
+<div class="section" style="background:#f8fafb;padding-top:72px;padding-bottom:72px;">
+  <div class="section-inner">
+    <div class="section-label">Sample Week</div>
+    <h2 class="section-title">What a week looks like</h2>
+    <p class="section-sub">All sessions are 30 minutes or less — designed to fit the energy and focus of your residents without overextending them. Staff prep takes about 5 minutes. Here's a typical week in a Better5 facility.</p>
+    <table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Session</th>
+          <th>Pillar</th>
+          <th>Duration</th>
+          <th>Format</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day">Monday</td>
+          <td>Morning Balance & Stability</td>
+          <td><span class="pillar-tag">Balance</span></td>
+          <td>25 min</td>
+          <td>Chair + standing</td>
+        </tr>
+        <tr>
+          <td class="day">Tuesday</td>
+          <td>Functional Strength — Upper Body</td>
+          <td><span class="pillar-tag">Strength</span></td>
+          <td>30 min</td>
+          <td>Seated or standing</td>
+        </tr>
+        <tr>
+          <td class="day">Wednesday</td>
+          <td>Gentle Mobility Flow</td>
+          <td><span class="pillar-tag">Mobility</span></td>
+          <td>20 min</td>
+          <td>Seated, all levels</td>
+        </tr>
+        <tr>
+          <td class="day">Thursday</td>
+          <td>Low-Impact Cardio & Endurance</td>
+          <td><span class="pillar-tag">Endurance</span></td>
+          <td>25 min</td>
+          <td>Chair-based options</td>
+        </tr>
+        <tr>
+          <td class="day">Friday</td>
+          <td>Mind & Movement — Memory Moves</td>
+          <td><span class="pillar-tag">Mind</span></td>
+          <td>20 min</td>
+          <td>Group, all levels</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:14px;color:#aaa;margin-top:16px;">* Schedule is a starting point. You can adjust timing, frequency, and session order to fit your facility's routine.</p>
+  </div>
+</div>
+
+<!-- PHOTO BREAK 2 -->
+<div style="position:relative;height:280px;overflow:hidden;">
+  <img src="./seniors-walking-boardwalk.jpg" alt="Two seniors jogging on a wooden boardwalk" style="width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block;" />
+  <div style="position:absolute;inset:0;background:rgba(13,36,64,0.35);"></div>
+</div>
+
+<!-- RESIDENT TESTIMONIALS -->
+<div class="section">
+  <div class="section-inner">
+    <div class="section-label">What residents say</div>
+    <h2 class="section-title">From seniors</h2>
+    <div class="testi-grid">
+      <div class="testi">
+        <p>"I didn't think I could do exercise anymore. But Better5 always has something I can manage, even on my hard days. I've surprised myself."</p>
+        <div class="testi-name">Margaret, 78</div>
+        <div class="testi-role">Resident · Assisted Living, Ontario</div>
+      </div>
+      <div class="testi">
+        <p>"It's the highlight of my week now. I come for the exercise but I stay for the other people. We all cheer each other on."</p>
+        <div class="testi-name">Harold, 82</div>
+        <div class="testi-role">Resident · Senior Living, BC</div>
+      </div>
+      <div class="testi">
+        <p>"My balance has improved so much my daughter noticed. She doesn't worry as much now. That means everything to me."</p>
+        <div class="testi-name">Dorothy, 74</div>
+        <div class="testi-role">Resident · Retirement Home, Alberta</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <h2>See the program in action</h2>
+  <p>Book a 20-minute demo and we'll walk you through a real session — so you can see exactly what your residents will experience.</p>
+  <a href="contact.html" class="btn-primary" onclick="posthog.capture('demo_cta_clicked',{location:'program_cta'})">Book a Free Demo →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Better5 &nbsp;·&nbsp; <a href="contact.html">Contact</a> &nbsp;·&nbsp; <a href="mailto:partners@better5.com">partners@better5.com</a> &nbsp;·&nbsp; <a href="https://better5.com">better5.com</a></p>
+</footer>
+
+<!-- Mobile Menu Toggle -->
+<script>
+function toggleMobileMenu(){const hamburger=document.querySelector('.hamburger');const menu=document.getElementById('mobileMenu');hamburger.classList.toggle('active');menu.classList.toggle('active');}function closeMobileMenu(){const hamburger=document.querySelector('.hamburger');const menu=document.getElementById('mobileMenu');hamburger.classList.remove('active');menu.classList.remove('active');}document.addEventListener('click',function(e){const nav=document.querySelector('nav');const menu=document.getElementById('mobileMenu');const hamburger=document.querySelector('.hamburger');if(!nav.contains(e.target)&&!menu.contains(e.target)){hamburger.classList.remove('active');menu.classList.remove('active');}});
+</script>
+
+<!-- PostHog -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]);t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_ru5aBEst81batGjqgUh88EFHlYCxEikwHKEjdrkN0MW',{api_host:'https://us.i.posthog.com'});
+</script>
+</body>
+</html>
