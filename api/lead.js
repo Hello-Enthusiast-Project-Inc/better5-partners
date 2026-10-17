@@ -9,9 +9,9 @@
 //   LEADS_SHEET_ID         target spreadsheet id
 // Optional:
 //   LEADS_SHEET_TAB        tab name (default "Sheet1")
-//   RESEND_API_KEY         Resend API key for new-lead email notification
-//   LEAD_NOTIFY_FROM       verified sender, e.g. "Better5 Leads <leads@better5.com>"
-//   LEAD_NOTIFY_TO         comma-separated recipients (default kelsey+danielle)
+//   TELEGRAM_BOT_TOKEN     bot token for new-lead ping
+//   TELEGRAM_CHAT_ID       chat id to notify
+//   TELEGRAM_TOPIC_ID      forum topic/thread id (optional)
 
 import crypto from 'crypto';
 
@@ -79,17 +79,12 @@ async function appendRow(token, row) {
   return resp.json();
 }
 
-async function notifyEmail(data) {
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return; // notification is optional; never blocks lead capture
-  const from = process.env.LEAD_NOTIFY_FROM || 'Better5 Leads <leads@better5.com>';
-  const to = (process.env.LEAD_NOTIFY_TO || 'kelsey@better5.com,danielle@better5.com')
-    .split(',').map((s) => s.trim()).filter(Boolean);
-
-  const subject = `🏥 New Demo Request: ${data.facility || data.name || 'Unknown'}`;
+async function notifyTelegram(data) {
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (!botToken || !chatId) return; // notification is optional; never blocks lead capture
   const lines = [
-    'New demo request from partners.better5.com',
-    '',
+    '🏥 New demo request — partners.better5.com',
     `Name: ${data.name || '—'}`,
     `Role: ${data.role || '—'}`,
     `Facility: ${data.facility || '—'}`,
@@ -97,19 +92,19 @@ async function notifyEmail(data) {
     `Residents: ${data.residents || '—'}`,
     `Email: ${data.email || '—'}`,
     `Phone: ${data.phone || '—'}`,
-    '',
-    'Message:',
-    data.message || '(none)',
-  ];
+    data.message ? `Message: ${data.message}` : null,
+  ].filter(Boolean);
+  const body = { chat_id: chatId, text: lines.join('\n') };
+  if (process.env.TELEGRAM_TOPIC_ID) body.message_thread_id = Number(process.env.TELEGRAM_TOPIC_ID);
   try {
-    const resp = await fetch('https://api.resend.com/emails', {
+    const resp = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: 'POST',
-      headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ from, to, subject, text: lines.join('\n') }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
     });
-    if (!resp.ok) console.error('Resend notify failed (non-fatal):', await resp.text());
+    if (!resp.ok) console.error('Telegram notify failed (non-fatal):', await resp.text());
   } catch (e) {
-    console.error('Resend notify failed (non-fatal):', e.message);
+    console.error('Telegram notify failed (non-fatal):', e.message);
   }
 }
 
@@ -143,7 +138,7 @@ export default async function handler(req, res) {
     await appendRow(token, row);
 
     // Fire-and-forget notification; never blocks the lead capture.
-    await notifyEmail(data);
+    await notifyTelegram(data);
 
     return res.status(200).json({ status: 'ok' });
   } catch (err) {
